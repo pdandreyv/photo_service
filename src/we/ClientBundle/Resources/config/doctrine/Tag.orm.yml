@@ -1,7 +1,7 @@
 we\ClientBundle\Entity\Tag:
   type: entity
   table: tag
-  #repositoryClass: we\ClientBundle\Entity\TagRepository
+  repositoryClass: we\ClientBundle\Entity\TagRepository
   id:
     id:
       type: integer

@@ -1,10 +1,15 @@
 {% extends 'weClientBundle::layout.html.twig' %}
 
 {% block content %}
-
-    <h2>Photo list</h2>
+<div style="float:right">
+    <form id="search_form" name="form_search" action="{{path('find_photo')}}" method="post">
+        <input type="text" name="search"> &nbsp;&nbsp;
+        <input type="submit" value="Search">
+    </form>
+</div>
+    <h2>Photo list{% if search %} with search result: {{search}}{% endif %}</h2>
     <div> 
-        <form id="photo_form" action="{{path('api_send_photo')}}">
+        <form id="photo_form" name="form_photo" method="post" action="{{path('api_send_photo')}}">
             Adding New Photo: <input type="file" name="photo[photo]" style="display: inline;"> &nbsp; 
             Input Tags accross comma: <input type="text" name="photo[tags]" placeholder="exemple, exemple2"> &nbsp;&nbsp;
             <input type="submit" value="Add Photo"> 
@@ -19,8 +24,9 @@
             {% endfor %}
         </li>
     {% else %} 
-        <li>No users found</li>
+        <li>No Photo found</li>
     {% endfor %}
     </ul>
+    {% include 'weClientBundle:block:pagination.html.twig' with pagination %}
     
 {% endblock %}

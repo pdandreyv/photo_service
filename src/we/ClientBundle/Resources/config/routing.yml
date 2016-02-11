@@ -2,10 +2,25 @@ we_client_default:
     path:     /
     defaults: { _controller: weClientBundle:Default:index }
     
+page_show1:
+    pattern:   /page
+    defaults:  { _controller: weClientBundle:Default:index }
 page_show:
     pattern:   /page/{page}
     defaults:  { _controller: weClientBundle:Default:index }
     
+find_photo1:
+    pattern:   /find/{search}
+    defaults:  { _controller: weClientBundle:Default:find1 }
+find_photo2:
+    pattern:   /find/{search}/{page}
+    defaults:  { _controller: weClientBundle:Default:find1 }
+find_photo:
+    pattern:   /find
+    defaults:  { _controller: weClientBundle:Default:find }
+    requirements:
+      _method:  POST
+      
 api_send_photo:
     pattern:  /api/send_photo
     defaults: { _controller: weClientBundle:Api:sendPhoto }

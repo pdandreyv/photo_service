@@ -14,7 +14,7 @@ class SendPhotoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('tags', null, array('label' => 'Tags'))
+            ->add('tags', 'text', array('label' => 'Tags'))
             ->add('photo', 'file', array('label' => 'Photo','data_class' => null,'required' => true))
         ;
     }
