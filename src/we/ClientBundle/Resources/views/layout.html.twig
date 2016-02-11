@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>1i2</title>
+    <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('components/jquery/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+</head>
+<body>
+    <main class="container main">
+        <header class="row header">
+            {% block header %}
+                {% include 'weClientBundle:block:header.html.twig' %}
+            {% endblock %}
+        </header>
+
+        <div class="content">{% block content %}{% endblock %}</div>
+    </main>
+</body>
+</html>

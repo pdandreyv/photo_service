@@ -1,0 +1,25 @@
+we\ClientBundle\Entity\Photo:
+    type: entity
+    table: photo
+    #repositoryClass: we\ClientBundle\Entity\PhotoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        filename:
+            type: string
+            length: 255
+        created_at:
+            type: datetime
+            
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue]
+
+    oneToMany:
+      tags:
+        targetEntity: Tag
+        mappedBy: photo
+        cascade: ["all"]

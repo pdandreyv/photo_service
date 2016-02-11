@@ -1,0 +1,24 @@
+we\ClientBundle\Entity\Tag:
+  type: entity
+  table: tag
+  #repositoryClass: we\ClientBundle\Entity\TagRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    photo_id:
+      type: integer
+    value:
+      type: string
+      length: 255
+
+  manyToOne:
+    photo:
+      targetEntity: Photo
+      joinColumn:
+        name: photo_id
+        referencedColumnName: id
+        onDelete: CASCADE

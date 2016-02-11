@@ -1,0 +1,26 @@
+{% extends 'weClientBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <h2>Photo list</h2>
+    <div> 
+        <form id="photo_form" action="{{path('api_send_photo')}}">
+            Adding New Photo: <input type="file" name="photo[photo]" style="display: inline;"> &nbsp; 
+            Input Tags accross comma: <input type="text" name="photo[tags]" placeholder="exemple, exemple2"> &nbsp;&nbsp;
+            <input type="submit" value="Add Photo"> 
+        </form>
+    </div><br>
+    <ul>
+    {% for photo in photos %} 
+        <li>
+            <img src="{{ photo.filename }}"><br>
+            {% for tag in photo.getTags() %}
+                <span>{{ tag.value }} </span>
+            {% endfor %}
+        </li>
+    {% else %} 
+        <li>No users found</li>
+    {% endfor %}
+    </ul>
+    
+{% endblock %}

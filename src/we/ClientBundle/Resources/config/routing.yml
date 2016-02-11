@@ -1,0 +1,31 @@
+we_client_default:
+    path:     /
+    defaults: { _controller: weClientBundle:Default:index }
+    
+page_show:
+    pattern:   /page/{page}
+    defaults:  { _controller: weClientBundle:Default:index }
+    
+api_send_photo:
+    pattern:  /api/send_photo
+    defaults: { _controller: weClientBundle:Api:sendPhoto }
+    requirements:
+      _method:  POST
+      
+api_del_photo:
+    pattern:  /api/del_photo
+    defaults: { _controller: weClientBundle:Api:deletePhoto }
+    requirements:
+      _method:  POST
+      
+api_del_tag:
+    pattern:  /api/del_tag
+    defaults: { _controller: weClientBundle:Api:deleteTag }
+    requirements:
+      _method:  POST
+      
+api_add_tag:
+    pattern:  /api/add_tag
+    defaults: { _controller: weClientBundle:Api:addTag }
+    requirements:
+      _method:  POST

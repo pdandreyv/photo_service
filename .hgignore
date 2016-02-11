@@ -1,0 +1,12 @@
+syntax: regexp
+^app/cache$
+syntax: regexp
+^app/logs$
+syntax: regexp
+^doc$
+syntax: regexp
+^web/upload$
+^app/config/parameters.yml
+^.idea$
+^.git$
+^nbproject$
